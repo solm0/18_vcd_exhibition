@@ -3,7 +3,7 @@ import path from "path";
 import Image from "next/image";
 
 export default function ListImages({ id }: { id: string }) {
-  const dir = path.join(process.cwd(), "public", id);
+  const dir = path.join(process.cwd(), "public", id.toLowerCase());
 
   let images: string[] = [];
   if (fs.existsSync(dir)) {

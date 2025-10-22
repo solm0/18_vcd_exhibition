@@ -23,7 +23,7 @@ export default function HomeList({
         {/* 썸네일 */}
         <div className="w-20 shrink-0">
           <Image
-            src={`/thumbnails/${project.id}.png`}
+            src={`/thumbnails/${project.id.toLowerCase()}.png`}
             alt={project.title}
             width={300}
             height={300}
