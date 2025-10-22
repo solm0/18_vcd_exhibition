@@ -5,9 +5,9 @@ export default function Header() {
     <header className="w-96 grid grid-cols-6 gap-4">
 
       {/* 로고 또는 기획전 제목 */}
-      <div className="col-span-1 font-bold">
+      <h1 className="col-span-1 font-bold">
         <p>Real<br/>×<br/>Fiction</p>
-      </div>
+      </h1>
 
       {/* 기획전 정보 */}
       <Link className="col-span-3" href={'/'}>

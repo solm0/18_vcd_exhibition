@@ -12,7 +12,7 @@ export default function HomeLists({
       {/* 헤더 */}
       <Header />
 
-      {/* 리스트 */}
+      {/* 프로젝트들 */}
       <div className="flex flex-col gap-2">
         {HomeData.map((project) => (
           <HomeList key={project.id} project={project}/>
