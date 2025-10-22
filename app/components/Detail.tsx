@@ -7,10 +7,11 @@ import ImageModal from "./ImageModal";
 import { detailAxisDeg, detailLeft, detailTop } from "../lib/pageLayout";
 
 export default function Detail({
-  content, assets, id
+  content, assets, books, id,
 }: {
   content: DetailDataProp;
   assets: string[];
+  books: string[][];
   id: string;
 }) {
   const [modalOpen, setModalOpen] = useState<string | null>(null);
@@ -27,6 +28,7 @@ export default function Detail({
         <Content
           project={content}
           assets={assets}
+          books={books}
           id={id}
           setModalOpen={setModalOpen}
         />

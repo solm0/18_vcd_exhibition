@@ -2,17 +2,20 @@ import { DetailDataProp } from "../lib/detail";
 import { HomeData } from "../lib/home";
 import Link from "next/link";
 import Assets from "./Assets";
+import Book from "./Book";
 
 export default function Content({
-  project, assets, id, setModalOpen
+  project, assets, books, id, setModalOpen
 }: {
   project: DetailDataProp;
   assets: string[];
+  books: string[][];
   id: string;
   setModalOpen: (modalOpen: string | null) => void;
 }) {
   const dp = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'dp');
   const work = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'work');
+
   const metadata = HomeData.find(project => project.id.toLowerCase() === id.toLowerCase());
   
   return (
@@ -67,6 +70,14 @@ export default function Content({
           <p key={i} className="break-keep leading-7 text-left">
             {p}
           </p>
+        ))}
+      </div>
+
+      {/* 에셋 - 책 */}
+      <div className="flex flex-col gap-4 items-start">
+        <h3 className="bg-white">책</h3>
+        {books.map((pages, i) => (
+          <Book key={i} pages={pages} />
         ))}
       </div>
 

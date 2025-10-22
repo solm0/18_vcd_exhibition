@@ -2,7 +2,7 @@ import HomeLists from "../components/HomeLists";
 import { DetailData } from "../lib/detail";
 import { HomeData } from "../lib/home";
 import Detail from "../components/Detail";
-import { readAssets } from "../lib/readAssets";
+import { readAssets, readAssetsInBook, readFolders } from "../lib/readAssets";
 import DetailBackground from "../components/DetailBackground";
 import { listAxisDeg, listLeft, listTop } from "../lib/pageLayout";
 
@@ -22,6 +22,8 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 
   const detail = matchedKey ? DetailData[matchedKey] : null;
   const assets = readAssets(matchedKey);
+  const bookFolders = readFolders(matchedKey);
+  const books = bookFolders.map((book) => readAssetsInBook(matchedKey, book))
 
   if (!detail) {
     return (
@@ -46,6 +48,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
         content={detail}
         assets={assets}
         id={matchedKey}
+        books={books}
       />
     </DetailBackground>
   );
