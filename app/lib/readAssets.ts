@@ -23,7 +23,6 @@ export function readAssets(id: string) {
   if (fs.existsSync(dir)) {
     images = fs
       .readdirSync(dir)
-      .filter((file) => /\.(png|jpg|jpeg|gif|webp|avif)$/i.test(file))
       .map((file) => `/${id.toLowerCase()}/${file}`)
       .slice(0, 7)
   }

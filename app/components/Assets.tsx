@@ -1,9 +1,10 @@
 import Image from "next/image";
 
 export default function Assets({
-  assets
+  assets, setModalOpen,
 }: {
   assets: string[];
+  setModalOpen: (modalOpen: string | null) => void;
 }) {
   return (
     <>
@@ -14,7 +15,11 @@ export default function Assets({
         // 이미지
         if (['png','jpg','jpeg','gif','webp','avif'].includes(ext)) {
           return (
-            <div key={i} className="max-w-200 overflow-hidden">
+            <div
+              key={i}
+              className="max-w-200 overflow-hidden hover:cursor-zoom-in"
+              onClick={() => setModalOpen(asset)}
+            >
               <Image
                 src={asset}
                 alt={asset}

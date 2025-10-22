@@ -1,20 +1,19 @@
-import Image from "next/image";
-import DetailBackground from "../components/DetailBackground";
-import HomeLists from "../components/HomeLists";
-import { HomeData } from "../lib/home";
-import About from "../components/About";
-import { readAssets } from "../lib/readAssets";
+import Archive from "@/app/components/Archive";
+import DetailBackground from "@/app/components/DetailBackground";
+import HomeLists from "@/app/components/HomeLists";
+import { HomeData } from "@/app/lib/home";
+import { readAssets } from "@/app/lib/readAssets";
 import { Metadata } from "next";
 import { listAxisDeg, listLeft, listTop } from "../lib/pageLayout";
 
 export const metadata: Metadata = {
-  title: "대주제",
+  title: "기록",
   description: "국민대학교 제 18회 조형전 시각디자인학과 기획전시",
 };
 
-const assets = readAssets('about');
+const assets = readAssets('archive');
 
-export default function AboutPage() {
+export default function ArchivePage() {
   return (
     <DetailBackground>
 
@@ -25,8 +24,8 @@ export default function AboutPage() {
 
       <div className="absolute w-full h-full pointer-events-none bg-[#e0e0e090] z-10" />
 
-      {/* 대주제에 대한 설명 */}
-      <About assets={assets} />
+      {/* 아카이브 */}
+      <Archive assets={assets} />
     </DetailBackground>
   );
 }

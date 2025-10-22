@@ -1,7 +1,27 @@
+import DetailBackground from "@/app/components/DetailBackground";
+import HomeLists from "@/app/components/HomeLists";
+import People from "@/app/components/People";
+import { HomeData } from "@/app/lib/home";
+import { Metadata } from "next";
+import { listAxisDeg, listLeft, listTop } from "../lib/pageLayout";
+
+export const metadata: Metadata = {
+  title: "참여한 사람",
+  description: "국민대학교 제 18회 조형전 시각디자인학과 기획전시",
+};
+
 export default function Credit() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">
-      참여
-    </div>
+    <DetailBackground>
+
+      {/* 리스트 */}
+      <div className={`${listAxisDeg} ${listTop} ${listLeft} absolute pt-150 pb-350 h-[190%] w-260 overflow-y-scroll z-0`}>
+        <HomeLists HomeData={HomeData} />
+      </div>
+
+      <div className="absolute w-full h-full pointer-events-none bg-[#e0e0e090] z-10" />
+
+      <People />
+    </DetailBackground>
   );
 }
