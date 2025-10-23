@@ -2,6 +2,7 @@ import Link from "next/link";
 import HomeLists from "./components/HomeLists";
 import { HomeData } from "./lib/home";
 import { listAxisDeg, listLeft, listTop } from "./lib/pageLayout";
+import Guestbook from "./components/Guestbook";
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="-rotate-30 w-auto h-auto relative translate-x-0 -translate-y-30 flex flex-col leading-7 pointer-events-auto">
+        <Guestbook />
+      </div>
     </div>
   );
 }
