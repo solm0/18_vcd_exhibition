@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="-rotate-30 w-auto h-auto relative translate-x-0 -translate-y-30 flex flex-col leading-7 pointer-events-auto">
+      <div className="-rotate-30 w-auto h-auto relative translate-x-0 -translate-y-30 flex flex-col leading-7 pointer-events-none">
         <Guestbook />
       </div>
     </div>

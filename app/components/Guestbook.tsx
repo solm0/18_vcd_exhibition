@@ -52,7 +52,7 @@ export default function Guestbook() {
   }, [reloadFlag]);
 
   return (
-    <div className='w-96 h-auto flex flex-col gap-4'>
+    <div className='w-96 h-auto flex flex-col gap-4 pointer-events-auto'>
 
       <p>방명록!!</p>
 
