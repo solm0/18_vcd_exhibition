@@ -1,4 +1,4 @@
-import { HomeDataProp } from "../lib/home";
+import { HomeDataProp } from "../../lib/home";
 import Header from "./Header";
 import HomeList from "./HomeList";
 

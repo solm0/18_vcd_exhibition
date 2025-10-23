@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from "react";
-import { DetailDataProp } from "../lib/detail";
+import { DetailDataProp } from "../../lib/detail";
 import Content from "./Content";
-import ImageModal from "./ImageModal";
-import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
+import ImageModal from "../ImageModal";
+import { detailAxisDeg, detailTop, detailTransX } from "../../lib/pageLayout";
 
 export default function Detail({
   content, assets, books, id,

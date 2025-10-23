@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { HomeDataProp } from "../lib/home";
+import { HomeDataProp } from "@/app/lib/home";
 import Link from "next/link";
 import ListImages from "./ListImages";
 

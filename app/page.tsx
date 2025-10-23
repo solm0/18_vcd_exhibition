@@ -1,8 +1,8 @@
 import Link from "next/link";
-import HomeLists from "./components/HomeLists";
+import HomeLists from "./components/1st-layer/HomeLists";
 import { HomeData } from "./lib/home";
 import { listAxisDeg, listRight, listTop } from "./lib/pageLayout";
-import Guestbook from "./components/Guestbook";
+import Guestbook from "./components/1st-layer/Guestbook";
 
 export default function Home() {
   return (

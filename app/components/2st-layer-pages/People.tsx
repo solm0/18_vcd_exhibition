@@ -1,6 +1,6 @@
-import { DetailData } from "../lib/detail";
-import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
-import { PeopleData } from "../lib/people";
+import { DetailData } from "@/app/lib/detail";
+import { detailAxisDeg, detailTop, detailTransX, } from "@/app/lib/pageLayout";
+import { PeopleData } from "@/app/lib/people";
 
 export default function People() {
   return (

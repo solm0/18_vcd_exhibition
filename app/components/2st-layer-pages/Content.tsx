@@ -1,8 +1,8 @@
-import { DetailDataProp } from "../lib/detail";
-import { HomeData } from "../lib/home";
+import { DetailDataProp } from "@/app/lib/detail";
+import { HomeData } from "@/app/lib/home";
 import Link from "next/link";
-import Assets from "./Assets";
-import Book from "./Book";
+import Assets from "../Assets";
+import Book from "../Book";
 
 export default function Content({
   project, assets, books, id, setModalOpen

@@ -1,6 +1,5 @@
-
 import Image from "next/image";
-import { readImages } from "../lib/readAssets";
+import { readImages } from "../../lib/readAssets";
 
 export default function ListImages({ id }: { id: string }) {
   const images = readImages(id);

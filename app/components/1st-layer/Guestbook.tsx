@@ -1,6 +1,6 @@
 'use client'
 
-import { auth, database } from '../lib/firebase';
+import { auth, database } from '@/app/lib/firebase';
 import { ref, set, get } from 'firebase/database';
 import { signInAnonymously } from 'firebase/auth';
 import { useEffect, useState } from 'react';

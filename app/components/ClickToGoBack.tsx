@@ -2,8 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-// 클릭하면 뒤로가는 배경
-export default function DetailBackground({
+export default function ClickToGoBack({
   children
 }: {
   children: React.ReactNode;

@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from "react";
-import ImageModal from "./ImageModal";
+import ImageModal from "../ImageModal";
 import Image from "next/image";
-import { AboutData } from "../lib/about";
-import Assets from "./Assets";
-import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
+import { AboutData } from "../../lib/about";
+import Assets from "../Assets";
+import { detailAxisDeg, detailTop, detailTransX } from "../../lib/pageLayout";
 
 export default function About({
   assets

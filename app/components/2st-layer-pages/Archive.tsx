@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from "react";
-import ImageModal from "./ImageModal";
-import Assets from "./Assets";
-import { ArchiveData } from "../lib/archive";
-import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
+import ImageModal from "../ImageModal";
+import Assets from "../Assets";
+import { ArchiveData } from "../../lib/archive";
+import { detailAxisDeg, detailTop, detailTransX } from "../../lib/pageLayout";
 
 export default function Archive({
   assets
