@@ -15,6 +15,7 @@ export default function Guestbook() {
   const [isComposing, setIsComposing] = useState(false);
   const [messages, setMessages] = useState<{ timestamp: string; message: string }[]>([]);
   const [reloadFlag, setReloadFlag] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -52,45 +53,69 @@ export default function Guestbook() {
   }, [reloadFlag]);
 
   return (
-    <div className='w-96 h-auto flex flex-col gap-4 pointer-events-auto'>
-
-      <p>방명록!!</p>
-
-      {/* 목록 */}
-      <div className='h-52 overflow-y-scroll'>
-        {messages.map((msg, idx) => (
-          <div key={idx} className="flex gap-2">
-            <p className='w-28 shrink-0'>{msg.timestamp}</p>
-            —
-            <p className="font-bold">{msg.message}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* 인풋창 */}
-      <div className='flex gap-4 items-start w-full h-12'>
-        <textarea
-          className='flex-6 focus:outline-0 focus:border h-full'
-          value={input}
-          wrap="soft"
-          onChange={(e) => setInput(e.target.value)}
-          placeholder='감상평이나 피드백을 적어주세요!'
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' && !isComposing) {
-              e.preventDefault();
-              handleSubmit(e);
-            }
-          }}
-          onCompositionStart={() => setIsComposing(true)} // Track IME composition start
-          onCompositionEnd={() => setIsComposing(false)} // Track IME composition end
-        />
+    <>
+      {/* 작은화면 열기버튼 */}
+      {!isOpen &&
         <button
-          onClick={handleSubmit}
-          className='border px-2 py-1 flex-1 hover:opacity-50'
+          className='fixed -top-50 -left-20 flex lg:hidden hover:opacity-50 w-auto h-auto pointer-events-auto px-2 border'
+          onClick={() => setIsOpen(true)}
         >
-          전송
+          방명록
         </button>
+      }
+
+      <div className={`
+        lg:flex w-80 h-auto flex-col gap-4 pointer-events-auto items-start bg-white
+        ${isOpen ? 'flex': 'hidden'}
+      `}>
+
+        {/* 작은화면 제목 겸 닫기버튼 */}
+        <button
+          className='hover:opacity-50 w-auto h-auto px-2 border block lg:hidden'
+          onClick={() => setIsOpen(false)}
+        >
+          방명록 닫기
+        </button>
+
+        {/* 큰화면 제목 */}
+        <p className='hidden lg:block'>방명록</p>
+
+        {/* 목록 */}
+        <div className='h-50 overflow-y-scroll'>
+          {messages.map((msg, idx) => (
+            <div key={idx} className="flex gap-2">
+              <p className='w-28 shrink-0'>{msg.timestamp}</p>
+              —
+              <p className="font-bold">{msg.message}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* 인풋창 */}
+        <div className='flex gap-4 items-start w-full h-12'>
+          <textarea
+            className='flex-6 focus:outline-0 focus:border h-full'
+            value={input}
+            wrap="soft"
+            onChange={(e) => setInput(e.target.value)}
+            placeholder='감상평이나 피드백을 적어주세요!'
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !isComposing) {
+                e.preventDefault();
+                handleSubmit(e);
+              }
+            }}
+            onCompositionStart={() => setIsComposing(true)} // Track IME composition start
+            onCompositionEnd={() => setIsComposing(false)} // Track IME composition end
+          />
+          <button
+            onClick={handleSubmit}
+            className='border flex-1 hover:opacity-50'
+          >
+            전송
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

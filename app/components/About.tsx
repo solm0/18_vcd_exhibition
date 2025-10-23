@@ -5,7 +5,7 @@ import ImageModal from "./ImageModal";
 import Image from "next/image";
 import { AboutData } from "../lib/about";
 import Assets from "./Assets";
-import { detailAxisDeg, detailLeft, detailTop } from "../lib/pageLayout";
+import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
 
 export default function About({
   assets
@@ -18,7 +18,7 @@ export default function About({
     <>
       <div
         className={`
-          ${detailAxisDeg} ${detailTop} ${detailLeft}
+          ${detailAxisDeg} ${detailTop} ${detailTransX}
           absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
         `}
@@ -48,6 +48,14 @@ export default function About({
             <div className="flex-1 bg-white">
             <p>2025.11.6—<br/>2025.11.15<br/>조형관 418호</p>
             </div>
+          </div>
+
+          <div className="flex flex-col gap-7 w-[34rem] bg-white">
+            {AboutData.description.map((p, i) => (
+              <p key={i} className="break-keep leading-7 text-left">
+                {p}
+              </p>
+            ))}
           </div>
 
           {AboutData.subject.map((sub, i) => {

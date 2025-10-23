@@ -1,20 +1,20 @@
 import Link from "next/link";
 import HomeLists from "./components/HomeLists";
 import { HomeData } from "./lib/home";
-import { listAxisDeg, listLeft, listTop } from "./lib/pageLayout";
+import { listAxisDeg, listRight, listTop } from "./lib/pageLayout";
 import Guestbook from "./components/Guestbook";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen font-sans">
+    <div className="relative w-screen h-screen font-sans">
 
       {/* 리스트 */}
-      <div className={`${listAxisDeg} ${listTop} ${listLeft} absolute pt-150 pb-350 h-[190%] w-260 overflow-y-scroll z-0`}>
+      <div className={`absolute ${listAxisDeg} ${listRight} ${listTop} pt-150 pb-350 h-[190%] w-260 overflow-y-scroll z-0`}>
         <HomeLists HomeData={HomeData} />
       </div>
 
       {/* 메뉴 */}
-      <div className={`${listAxisDeg} ${listTop} ${listLeft} absolute pt-150 pb-350 h-[190%] w-260 pointer-events-none`}>
+      <div className={`absolute ${listAxisDeg} ${listRight} ${listTop} pt-150 pb-350 h-[190%] w-260 pointer-events-none`}>
         <div className="w-30 h-auto relative -translate-x-54 translate-y-38 flex flex-col leading-7 pointer-events-auto">
           <Link href={'/about'}>
             <p className="underline underline-offset-4 decoration-1 hover:opacity-50">대주제</p>
@@ -28,8 +28,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="-rotate-30 w-auto h-auto relative translate-x-0 -translate-y-30 flex flex-col leading-7 pointer-events-none">
-        <Guestbook />
+      <div className={`absolute ${listAxisDeg} -top-50 left-0 pt-150 pb-350 h-[190%] w-260 pointer-events-none`}>
+        <div className="-rotate-90 w-auto h-auto relative -translate-x-160 -translate-y-40 flex flex-col leading-7 pointer-events-none">
+          <Guestbook />
+        </div>
       </div>
     </div>
   );

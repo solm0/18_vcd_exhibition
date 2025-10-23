@@ -74,30 +74,36 @@ export default function Content({
       </div>
 
       {/* 에셋 - 책 */}
-      <div className="flex flex-col gap-4 items-start">
-        <h3 className="bg-white">책</h3>
-        {books.map((pages, i) => (
-          <Book key={i} pages={pages} />
-        ))}
-      </div>
+      {books.length != 0 &&
+        <div className="flex flex-col gap-4 items-start">
+          <h3 className="bg-white">책</h3>
+          {books.map((pages, i) => (
+            <Book key={i} pages={pages} />
+          ))}
+        </div>
+      }
 
       {/* 에셋 - 작품 */}
-      <div className="flex flex-col gap-4 items-start">
-        <h3 className="bg-white">작품 사진</h3>
-        <Assets
-          assets={work}
-          setModalOpen={setModalOpen}
-        />
-      </div>
+      {work.length != 0 &&
+        <div className="flex flex-col gap-4 items-start">
+          <h3 className="bg-white">작품</h3>
+          <Assets
+            assets={work}
+            setModalOpen={setModalOpen}
+          />
+        </div>
+      }
 
       {/* 에셋 - 전시 */}
-      <div className="flex flex-col gap-4 items-start">
-        <h3 className="bg-white">전시 사진</h3>
-        <Assets
-          assets={dp}
-          setModalOpen={setModalOpen}
-        />
-      </div>
+      {dp.length != 0 &&
+        <div className="flex flex-col gap-4 items-start">
+          <h3 className="bg-white">전시 전경</h3>
+          <Assets
+            assets={dp}
+            setModalOpen={setModalOpen}
+          />
+        </div>
+      }
     </div>
   )
 }

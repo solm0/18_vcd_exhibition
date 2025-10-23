@@ -4,7 +4,7 @@ import { useState } from "react";
 import { DetailDataProp } from "../lib/detail";
 import Content from "./Content";
 import ImageModal from "./ImageModal";
-import { detailAxisDeg, detailLeft, detailTop } from "../lib/pageLayout";
+import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
 
 export default function Detail({
   content, assets, books, id,
@@ -20,7 +20,7 @@ export default function Detail({
     <>
       <div
         className={`
-          ${detailAxisDeg} ${detailTop} ${detailLeft}
+          ${detailAxisDeg} ${detailTop} ${detailTransX}
           absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
         `}

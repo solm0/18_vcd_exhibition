@@ -5,7 +5,7 @@ import { HomeData } from "../lib/home";
 import About from "../components/About";
 import { readAssets } from "../lib/readAssets";
 import { Metadata } from "next";
-import { listAxisDeg, listLeft, listTop } from "../lib/pageLayout";
+import { listAxisDeg, listRight, listTop } from "../lib/pageLayout";
 
 export const metadata: Metadata = {
   title: "대주제",
@@ -19,7 +19,7 @@ export default function AboutPage() {
     <DetailBackground>
 
       {/* 리스트 */}
-      <div className={`${listAxisDeg} ${listTop} ${listLeft} absolute pt-150 pb-350 h-[190%] w-260 overflow-y-scroll z-0`}>
+      <div className={`${listAxisDeg} ${listTop} ${listRight} absolute pt-150 pb-350 h-[190%] w-260 overflow-y-scroll z-0`}>
         <HomeLists HomeData={HomeData} />
       </div>
 

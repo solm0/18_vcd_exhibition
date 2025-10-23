@@ -4,7 +4,7 @@ import { HomeData } from "../lib/home";
 import Detail from "../components/Detail";
 import { readAssets, readAssetsInBook, readFolders } from "../lib/readAssets";
 import DetailBackground from "../components/DetailBackground";
-import { listAxisDeg, listLeft, listTop } from "../lib/pageLayout";
+import { listAxisDeg, listRight, listTop } from "../lib/pageLayout";
 
 export default async function DetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -37,7 +37,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
     <DetailBackground>
 
       {/* 리스트 */}
-      <div className={`${listAxisDeg} ${listTop} ${listLeft} absolute pt-150 pb-350 h-[190%] w-260 overflow-y-scroll z-0`}>
+      <div className={`${listAxisDeg} ${listTop} ${listRight} absolute pt-150 pb-350 h-[190%] w-260 overflow-y-scroll z-0`}>
         <HomeLists HomeData={HomeData} />
       </div>
 

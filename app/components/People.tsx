@@ -1,12 +1,12 @@
 import { DetailData } from "../lib/detail";
-import { detailAxisDeg, detailLeft, detailTop } from "../lib/pageLayout";
+import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
 import { PeopleData } from "../lib/people";
 
 export default function People() {
   return (
     <div
       className={`
-        ${detailAxisDeg} ${detailTop} ${detailLeft}
+        ${detailAxisDeg} ${detailTop} ${detailTransX}
         absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
         pointer-events-none z-20
       `}

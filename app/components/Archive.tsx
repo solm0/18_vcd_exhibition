@@ -4,7 +4,7 @@ import { useState } from "react";
 import ImageModal from "./ImageModal";
 import Assets from "./Assets";
 import { ArchiveData } from "../lib/archive";
-import { detailAxisDeg, detailLeft, detailTop } from "../lib/pageLayout";
+import { detailAxisDeg, detailTop, detailTransX } from "../lib/pageLayout";
 
 export default function Archive({
   assets
@@ -17,7 +17,7 @@ export default function Archive({
     <>
       <div
         className={`
-          ${detailAxisDeg} ${detailTop} ${detailLeft}
+          ${detailAxisDeg} ${detailTop} ${detailTransX}
           absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
         `}
