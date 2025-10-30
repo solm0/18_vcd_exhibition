@@ -4,7 +4,6 @@ import { auth, database } from '@/app/lib/firebase';
 import { ref, set, get } from 'firebase/database';
 import { signInAnonymously } from 'firebase/auth';
 import { useEffect, useState } from 'react';
-import { listRight, listTop } from '@/app/lib/pageLayout';
 
 interface Message {
   timestamp: string;
@@ -56,7 +55,7 @@ export default function Guestbook() {
   }, [reloadFlag]);
 
   return (
-    <div className={`${listTop} ${listRight} fixed w-80 h-auto -top-20 -left-30 pointer-events-auto bg-neutral-500`}>
+    <div className={`rotate-[30deg] md:rotate-0 origin-top-left fixed p-2 md:p-0 w-[calc(100vw-1rem)] md:w-80 ${isOpen ? 'border-b': 'border-0'} border-neutral-200 bg-neutral-500 h-auto -top-78 md:-top-40 -left-22 md:-left-40 pointer-events-auto transition-all`}>
       <div className="w-full h-auto flex flex-col gap-4 items-start">
 
         {/* 열기/닫기 버튼 */}
@@ -69,13 +68,13 @@ export default function Guestbook() {
           </p>
         </button>
 
-        <div className={`${isOpen ? 'flex' : 'hidden'} flex-col gap-4`}>
+        <div className={`${isOpen ? 'flex' : 'hidden'} h-auto w-full flex-col gap-4`}>
           {/* 목록 */}
-          <div className='h-50 overflow-y-scroll custom-scrollbar'>
+          <div className='w-full h-50 overflow-y-scroll overflow-x-hidden custom-scrollbar'>
             {messages.map((msg, idx) => (
-              <div key={idx} className="flex gap-2">
-                <p className='w-28 shrink-0 scale-x-95 tracking-normal origin-left opacity-70'>{msg.timestamp}</p>
-                <p className="scale-x-95 tracking-normal origin-left">{msg.message}</p>
+              <div key={idx} className="relative flex gap-2 w-full min-w-0">
+                <p className='w-28 break-keep scale-x-95 tracking-normal origin-left opacity-70'>{msg.timestamp}</p>
+                <p className="break-keep overflow-hidden min-w-0 scale-x-95 tracking-normal origin-left">{msg.message}</p>
               </div>
             ))}
           </div>

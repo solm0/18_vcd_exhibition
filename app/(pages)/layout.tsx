@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import HomeLists from "../components/1st-layer/HomeLists";
 import Back from "../components/Back";
 import { HomeData } from "../lib/home";
@@ -21,7 +22,9 @@ export default function SecondLayerLayout({
 
       {children}
 
-      <Back />
+      <Suspense>
+        <Back />
+      </Suspense>
     </div>
   )
 }

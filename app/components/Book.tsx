@@ -19,7 +19,7 @@ export default function Book({
             <div className="absolute w-full h-full"/>
           ): (
             <>
-              <div className="absolute w-full h-full bg-linear-to-r from-transparent to-[#00000050]"/>
+              <div className="absolute w-full h-full bg-linear-to-r from-transparent to-[#00000050] cursor-w-resize"/>
               <Image
                 src={pages[page+1]}
                 alt={pages[page+1]}
@@ -39,7 +39,7 @@ export default function Book({
             <div className="absolute w-full h-full shrink-0"/>
           ): (
             <>
-              <div className="absolute w-full h-full bg-linear-to-r from-transparent to-[#00000050]"/>
+              <div className="absolute w-full h-full bg-linear-to-r from-transparent to-[#00000050] cursor-e-resize"/>
               <Image
                 src={pages[page+2]}
                 alt={pages[page+2]}

@@ -19,7 +19,7 @@ export default function Content({
   const metadata = HomeData.find(project => project.id.toLowerCase() === id.toLowerCase());
   
   return (
-    <div className="flex flex-col items-start gap-7 w-full pointer-events-auto pb-96">
+    <div className="flex flex-col items-start gap-7 w-full pointer-events-auto">
       {/* 제목 */}
       <h2 className="font-bold text-5xl pb-8 text-neutral-50 scale-x-95 tracking-normal origin-left w-full max-w-[13em] break-keep leading-[1.3em]">
         {metadata?.title}
