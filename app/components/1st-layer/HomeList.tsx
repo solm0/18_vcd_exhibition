@@ -13,8 +13,12 @@ export default function HomeList({
       href={`/${project.id.toLowerCase()}`}
     >
       {/* 제목 */}
-      <div className="w-63 break-keep shrink-0 flex justify-end text-right scale-x-95 tracking-normal origin-right">
+      <div className="w-53 break-keep shrink-0 flex justify-end text-right scale-x-95 tracking-normal origin-right">
         <p>{project.title}</p>
+      </div>
+
+      <div className="bg-neutral-100 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full">
+        {project.id}
       </div>
 
       {/* 이미지 */}

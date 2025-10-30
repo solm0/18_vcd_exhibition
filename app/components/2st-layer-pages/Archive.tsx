@@ -20,10 +20,11 @@ export default function Archive({
           ${detailAxisDeg} ${detailTop} ${detailTransX}
           absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
+          text-neutral-50
         `}
       >
         <div className="flex flex-col items-start gap-7 w-auto max-w-[40rem] pointer-events-auto">
-          <h2 className="text-8xl w-auto bg-white">
+          <h2 className="text-8xl w-auto scale-x-95 tracking-normal origin-left">
             기록
           </h2>
 
@@ -33,7 +34,7 @@ export default function Archive({
             
             return (
               <div key={i} className="flex flex-col gap-4 items-start">
-                <h3 className="bg-white">{sub.title}</h3>
+                <h3 className="scale-x-95 tracking-normal origin-left">{sub.title}</h3>
                 <Assets assets={foundAssets} setModalOpen={setModalOpen} />
               </div>
             )

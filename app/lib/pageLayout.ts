@@ -1,5 +1,5 @@
 export const listAxisDeg = 'rotate-[60deg]'
-export const listTop = '-top-50';
+export const listTop = '-top-54';
 export const listRight = '-right-10';
 export const detailAxisDeg = '-rotate-[10deg]';
 export const detailTop = '-top-30';

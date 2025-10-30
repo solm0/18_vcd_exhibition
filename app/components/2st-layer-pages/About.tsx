@@ -22,6 +22,7 @@ export default function About({
           ${detailAxisDeg} ${detailTop} ${detailTransX}
           absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
+          text-neutral-50
         `}
       >
         <div className="flex flex-col items-start gap-7 w-auto max-w-[40rem] pointer-events-auto">
@@ -38,7 +39,7 @@ export default function About({
             />
           </div>
 
-          <div className={`${throughx.className} w-full text-center flex flex-col text-neutral-50`}>
+          <div className={`${throughx.className} w-full text-center flex flex-col`}>
             <h2 className="text-[10rem]">throughX</h2>
             <div className="w-full flex justify-between text-5xl">
               <p>2025.11.06-15</p>

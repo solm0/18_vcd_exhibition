@@ -21,8 +21,10 @@ export default function Detail({
       <div
         className={`
           ${detailAxisDeg} ${detailTop} ${detailTransX}
-          absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
+          absolute pt-80 pb-40 h-[120%] overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
+          custom-scrollbar
+          w-[35rem] md:w-[40rem] lg:w-[45rem]
         `}
       >
         <Content

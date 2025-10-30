@@ -40,9 +40,11 @@ export default function Header() {
         </div>
 
         {/* 로고 */}
-        <div className="absolute left-[calc(100%+1/6*100%+3rem)] flex gap-4">
-          <div className="w-16">KMU DESIGN</div>
-          <div className="w-16">국민대<br />로고</div>
+        <div className="absolute left-[calc(100%+1/6*100%+3rem)] flex gap-4 h-auto w-auto">
+          <div>KMU DESIGN</div>
+          <div>
+            <div className="w-12 h-12 rounded-full border border-neutral-50"></div>
+          </div>
         </div>
       </div>
     </header>

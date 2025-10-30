@@ -52,16 +52,19 @@ export default function Book({
         </div>
       </div>
 
-      <div className="w-full flex justify-between">
-        <p className="bg-white">책장을 클릭해 넘기세요</p>
-        <p className="bg-white">
-          {page <= -1
-            ? '앞표지'
-            : page+2 >= pages.length
-              ? '뒷표지'
-              : `${page+1}—${page+2}`
-          } / 전체 {pages.length-1}장
-        </p>
+      <div className="w-full flex justify-between text-neutral-50 text-sm opacity-80 pr-4">
+        <p className="animate-pulse">책장을 클릭해 넘겨 보세요</p>
+        <div className="flex gap-2">
+          <p>전체 {pages.length-1}장 중</p>
+          <p>
+            {page <= -1
+              ? '앞표지'
+              : page+2 >= pages.length
+                ? '뒷표지'
+                : `${page+1}/${page+2}`
+            }
+          </p>
+        </div>
       </div>
     </>
   )
