@@ -17,7 +17,7 @@ export default function HomeList({
         <p>{project.title}</p>
       </div>
 
-      <div className="bg-neutral-100 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full">
+      <div className="bg-neutral-200 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full">
         {project.id}
       </div>
 

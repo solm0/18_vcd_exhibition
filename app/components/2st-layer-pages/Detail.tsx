@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { DetailDataProp } from "../../lib/detail";
-import Content from "./Content";
+import Content from "../Content";
 import ImageModal from "../ImageModal";
 import { detailAxisDeg, detailTop, detailTransX } from "../../lib/pageLayout";
 
@@ -24,7 +24,8 @@ export default function Detail({
           absolute pt-80 pb-40 h-[120%] overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
           custom-scrollbar
-          w-[35rem] md:w-[40rem] lg:w-[45rem]
+          custom-scrollbar
+          w-[22rem] md:w-[40rem] lg:w-[45rem]
         `}
       >
         <Content

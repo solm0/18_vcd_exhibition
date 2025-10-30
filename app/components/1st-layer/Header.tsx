@@ -6,16 +6,16 @@ export default function Header() {
     <header className="w-96 flex flex-col gap-24 text-neutral-50">
 
       {/* 2층 */}
-      <div className={`${throughx.className} flex flex-col w-xl`}>
+      <div className={`${throughx.className} flex flex-col w-96 md:w-md lg:w-xl`}>
         {/* 기획전 제목 */}
-        <h1 className="text-[10rem] origin-left">
+        <h1 className="text-8xl md:text-9xl lg:text-[10rem] origin-left pb-4 md:pb-6 lg:pb-10 duration-300">
           throughX
         </h1>
 
         {/* 날짜 */}
-        <div className="w-full flex justify-between text-5xl">
+        <div className="w-full flex justify-between text-4xl md:text-4xl lg:text-5xl">
           <p>2025.11.06-15</p>
-          10:00-19:00
+          <p>10:00-19:00</p>
         </div>
 
       </div>

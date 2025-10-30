@@ -1,8 +1,8 @@
 import { DetailDataProp } from "@/app/lib/detail";
 import { HomeData } from "@/app/lib/home";
 import Link from "next/link";
-import Assets from "../Assets";
-import Book from "../Book";
+import Assets from "./Assets";
+import Book from "./Book";
 
 export default function Content({
   project, assets, books, id, setModalOpen
@@ -19,7 +19,7 @@ export default function Content({
   const metadata = HomeData.find(project => project.id.toLowerCase() === id.toLowerCase());
   
   return (
-    <div className="flex flex-col items-start gap-7 w-full pointer-events-auto">
+    <div className="flex flex-col items-start gap-7 w-full pointer-events-auto pb-96">
       {/* 제목 */}
       <h2 className="font-bold text-5xl pb-8 text-neutral-50 scale-x-95 tracking-normal origin-left w-full max-w-[13em] break-keep leading-[1.3em]">
         {metadata?.title}
@@ -28,7 +28,7 @@ export default function Content({
       {/* 태그 */}
       <div className="flex gap-2 text-sm scale-x-95 tracking-normal origin-left w-full">
         {metadata?.tag.map((tag, i) => (
-          <p key={i} className="bg-neutral-100 text-neutral-600 px-3 py-1">
+          <p key={i} className="bg-neutral-200 text-neutral-600 px-3 py-1">
             {tag}
           </p>
         ))}
@@ -36,10 +36,10 @@ export default function Content({
 
       {/* 팀 */}
       <div className="text-neutral-50 scale-x-95 tracking-normal origin-left w-full flex gap-3 items-start">
-        <div className="bg-neutral-100 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full shrink-0">
+        <div className="bg-neutral-200 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full shrink-0">
           {metadata?.id}
         </div>
-        <div className="max-w-[34rem] flex gap-x-2 break-keep flex-wrap">
+        <div className="w-[22rem] md:w-[32rem] flex gap-x-2 break-keep flex-wrap">
           {project.people.map((person, i) => (
             <p key={i}>
               {person}
@@ -66,7 +66,7 @@ export default function Content({
         - 글줄길이: 34자
         - 행송: 1.75rem
       */}
-      <div className="flex flex-col gap-7 w-[27rem] md:w-[32rem] text-neutral-50 scale-x-95 tracking-normal origin-left">
+      <div className="flex flex-col gap-7 w-[22rem] md:w-[32rem] text-neutral-50 scale-x-95 tracking-normal origin-left">
         {project.description.map((p, i) => (
           <p key={i} className="break-keep leading-7 text-left">
             {p}

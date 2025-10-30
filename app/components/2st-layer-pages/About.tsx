@@ -20,9 +20,11 @@ export default function About({
       <div
         className={`
           ${detailAxisDeg} ${detailTop} ${detailTransX}
-          absolute py-80 h-[120%] w-240 overflow-y-scroll overflow-x-hidden
+          absolute py-80 h-[120%] overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
           text-neutral-50
+          custom-scrollbar
+          w-[22rem] md:w-[40rem] lg:w-[45rem]
         `}
       >
         <div className="flex flex-col items-start gap-7 w-auto max-w-[40rem] pointer-events-auto">
@@ -39,16 +41,16 @@ export default function About({
             />
           </div>
 
-          <div className={`${throughx.className} w-full text-center flex flex-col`}>
-            <h2 className="text-[10rem]">throughX</h2>
-            <div className="w-full flex justify-between text-5xl">
+          <div className={`${throughx.className} w-full text-center flex flex-col pb-20`}>
+            <h2 className="text-8xl md:text-[10rem] pb-4 md:pb-6 lg:pb-10 duration-300">throughX</h2>
+            <div className="w-full flex justify-between text-4xl md:text-5xl">
               <p>2025.11.06-15</p>
               10:00-19:00
             </div>
           </div>
 
 
-          <div className="w-full flex justify-between text-2xl leading-[1.4em] gap-4">
+          <div className="w-full flex justify-between text-base md:text-2xl leading-[1.4em] gap-4">
             <div className="flex-1 ">
               <p className="scale-x-95 tracking-normal origin-left">국민대학교<br/>제 18회 조형전<br/>시각디자인학과 기획전시</p>
             </div>
@@ -61,7 +63,7 @@ export default function About({
             </div>
           </div>
 
-          <div className="flex flex-col gap-7 w-[34rem] scale-x-95 tracking-normal origin-left">
+          <div className="flex flex-col gap-7 w-[22rem] md:w-[32rem] scale-x-95 tracking-normal origin-left">
             {AboutData.description.map((p, i) => (
               <p key={i} className="break-keep leading-7 text-left">
                 {p}
@@ -71,7 +73,6 @@ export default function About({
 
           {AboutData.subject.map((sub, i) => {
             const foundAssets = assets.filter(asset => asset.split('/')[2].split('_')[0] === sub.id);
-            console.log(sub, foundAssets)
             
             return (
               <div key={i} className="flex flex-col gap-4 items-start">
