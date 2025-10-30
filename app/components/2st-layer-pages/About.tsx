@@ -20,7 +20,7 @@ export default function About({
       <div
         className={`
           ${detailAxisDeg} ${detailTop} ${detailTransX}
-          absolute py-80 h-[120%] overflow-y-scroll overflow-x-hidden
+          absolute pt-80 pb-40  h-[120%] overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
           text-neutral-50
           custom-scrollbar
@@ -76,7 +76,7 @@ export default function About({
             
             return (
               <div key={i} className="flex flex-col gap-4 items-start">
-                <h3 className="scale-x-95 tracking-normal origin-left">
+                <h3 className="scale-x-95 tracking-normal origin-left text-3xl">
                   {sub.title}
                 </h3>
                 <Assets assets={foundAssets} setModalOpen={setModalOpen} />

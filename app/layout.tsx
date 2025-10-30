@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { gowundodum, pretendard } from "./lib/fonts";
+import { gowundodum } from "./lib/fonts";
 
 export const metadata: Metadata = {
   title: "Through X",
