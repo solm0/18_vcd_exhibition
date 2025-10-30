@@ -6,6 +6,7 @@ import Image from "next/image";
 import { AboutData } from "../../lib/about";
 import Assets from "../Assets";
 import { detailAxisDeg, detailTop, detailTransX } from "../../lib/pageLayout";
+import { throughx } from "@/app/lib/fonts";
 
 export default function About({
   assets
@@ -37,20 +38,29 @@ export default function About({
             />
           </div>
 
-          <h2 className="text-8xl w-full text-center bg-white">
-            Real<br/>×<br/>Fiction
-          </h2>
-
-          <div className="w-full flex justify-between text-2xl leading-[1.4em] gap-4">
-            <div className="flex-1 bg-white">
-              <p>국민대학교<br/>제 18회 조형전<br/>시각디자인학과 기획전시</p>
-            </div>
-            <div className="flex-1 bg-white">
-            <p>2025.11.6—<br/>2025.11.15<br/>조형관 418호</p>
+          <div className={`${throughx.className} w-full text-center flex flex-col text-neutral-50`}>
+            <h2 className="text-[10rem]">throughX</h2>
+            <div className="w-full flex justify-between text-5xl">
+              <p>2025.11.06-15</p>
+              10:00-19:00
             </div>
           </div>
 
-          <div className="flex flex-col gap-7 w-[34rem] bg-white">
+
+          <div className="w-full flex justify-between text-2xl leading-[1.4em] gap-4">
+            <div className="flex-1 ">
+              <p className="scale-x-95 tracking-normal origin-left">국민대학교<br/>제 18회 조형전<br/>시각디자인학과 기획전시</p>
+            </div>
+            
+            <div className="flex-1 ">
+              <div className="scale-x-95 tracking-normal origin-left">
+                <p>조형관 1층, 4층 일대</p>
+                <p>Kookmin University<br/>College of Design 1F, 4F</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-7 w-[34rem] scale-x-95 tracking-normal origin-left">
             {AboutData.description.map((p, i) => (
               <p key={i} className="break-keep leading-7 text-left">
                 {p}
@@ -64,7 +74,9 @@ export default function About({
             
             return (
               <div key={i} className="flex flex-col gap-4 items-start">
-                <h3 className="bg-white">{sub.title}</h3>
+                <h3 className="scale-x-95 tracking-normal origin-left">
+                  {sub.title}
+                </h3>
                 <Assets assets={foundAssets} setModalOpen={setModalOpen} />
               </div>
             )

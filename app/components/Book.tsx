@@ -10,7 +10,7 @@ export default function Book({
 
   return (
     <>
-      <div className="flex w-[40rem]">
+      <div className="flex w-full">
         <div
           className="flex-1 relative h-auto flex items-center justify-center shrink-0"
           onClick={() => page > -1 && setPage(prev => prev-2)}

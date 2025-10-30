@@ -1,6 +1,7 @@
 import { DetailData } from "@/app/lib/detail";
 import { detailAxisDeg, detailTop, detailTransX, } from "@/app/lib/pageLayout";
 import { PeopleData } from "@/app/lib/people";
+import Link from "next/link";
 
 export default function People() {
   return (
@@ -31,7 +32,12 @@ export default function People() {
         <h2 className="text-3xl bg-white">기획전 출품 팀</h2>
         {Object.keys(DetailData).map(key => (
           <div key={key}>
-            <h3 className="bg-white font-bold">{key}팀</h3>
+            <Link
+              className="bg-white font-bold underline underline-offset-4 decoration-1 hover:opacity-50"
+              href={`/${key.toLowerCase()}`}
+            >
+                {key}팀
+            </Link>
             <div className="flex gap-2 bg-white">
               {DetailData[key].people.map((name, idx) => (
                 <p key={idx}>

@@ -65,7 +65,7 @@ export default function Guestbook() {
       }
 
       <div className={`
-        lg:flex w-80 h-auto flex-col gap-4 pointer-events-auto items-start bg-white
+        lg:flex w-80 h-auto flex-col gap-4 pointer-events-auto items-start
         ${isOpen ? 'flex': 'hidden'}
       `}>
 
