@@ -73,7 +73,7 @@ export default function Guestbook() {
           <div className='w-full h-50 overflow-y-scroll overflow-x-hidden custom-scrollbar'>
             {messages.map((msg, idx) => (
               <div key={idx} className="relative flex gap-2 w-full min-w-0">
-                <p className='w-28 break-keep scale-x-95 tracking-normal origin-left opacity-70'>{msg.timestamp}</p>
+                <p className='w-28 shrink-0 scale-x-95 tracking-normal origin-left opacity-70'>{msg.timestamp}</p>
                 <p className="break-keep overflow-hidden min-w-0 scale-x-95 tracking-normal origin-left">{msg.message}</p>
               </div>
             ))}

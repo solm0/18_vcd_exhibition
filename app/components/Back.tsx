@@ -30,7 +30,7 @@ export default function Back() {
       {pathname.length === 1 &&
         <Link
           href={`/${next}`}
-          className={`scale-x-95 tracking-normal origin-left bg-neutral-200 text-neutral-600 px-3 py-1 hover:opacity-50`}
+          className={`scale-x-95 tracking-normal origin-left bg-neutral-200 text-neutral-600 px-3 py-1 hover:opacity-50 translate-x-1`}
         >
           다음 프로젝트
         </Link>

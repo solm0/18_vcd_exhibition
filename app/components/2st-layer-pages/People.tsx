@@ -17,7 +17,7 @@ export default function People() {
     >
       <div className="flex flex-col items-center gap-30 w-auto max-w-[40rem] pointer-events-auto">
         <div className="flex flex-col gap-12 items-center">
-          <h2 className="text-5xl scale-x-95 tracking-normal origin-left text-center break-keep leading-[1.5em]">조형전 운영 위원회</h2>
+          <h2 className="text-5xl scale-x-95 tracking-normal origin-left text-center break-keep leading-[1.3em]">조형전 운영 위원회</h2>
           <div className="flex flex-col gap-7">
             {PeopleData.map((role, i) => (
               <div key={i} className="flex flex-col items-center gap-2">
@@ -36,7 +36,8 @@ export default function People() {
         </div>
 
         <div className="flex flex-col gap-12 items-center">
-          <h2 className="text-5xl scale-x-95 tracking-normal origin-left">기획전 출품 팀</h2>
+          <h2 className="text-5xl scale-x-95 tracking-normal origin-left leading-[1.3em]">기획전 출품 팀</h2>
+          <p className="text-neutral-50 text-sm animate-pulse">팀명 클릭해 프로젝트 보러가기</p>
           <div className="flex flex-col gap-7">
             {Object.keys(DetailData).map(key => (
               <div key={key} className="flex flex-col items-center gap-2">
@@ -44,7 +45,7 @@ export default function People() {
                   className="bg-neutral-200 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full hover:opacity-50"
                   href={`/${key.toLowerCase()}`}
                 >
-                    {key}
+                  {key}
                 </Link>
                 <div className="flex gap-x-2 flex-wrap w-3/4 justify-center">
                   {DetailData[key].people.map((name, idx) => (
