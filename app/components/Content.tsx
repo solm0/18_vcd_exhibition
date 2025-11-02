@@ -66,7 +66,7 @@ export default function Content({
         - 글줄길이: 34자
         - 행송: 1.75rem
       */}
-      <div className="flex flex-col gap-7 w-[22rem] md:w-[32rem] text-neutral-50 scale-x-95 tracking-normal origin-left">
+      <div className="flex flex-col gap-7 w-[22rem] md:w-[32rem] 2xl:w-[35rem] text-neutral-50 scale-x-95 tracking-normal origin-left">
         {project.description.map((p, i) => (
           <p key={i} className="break-keep leading-7 text-left">
             {p}

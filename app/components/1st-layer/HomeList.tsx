@@ -1,15 +1,20 @@
+'use client'
+
 import Image from "next/image";
 import { HomeDataProp } from "@/app/lib/home";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function HomeList({
   project,
 }: {
   project: HomeDataProp;
 }) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <Link
-      className='w-auto h-20 flex gap-4 items-start hover:-translate-x-3 transition-transform text-neutral-50'
+      className='w-auto h-20 xl:h-30 flex gap-4 items-start hover:-translate-x-5 transition-all text-neutral-50 duration-300'
       href={`/${project.id.toLowerCase()}`}
     >
       {/* 제목 */}
@@ -22,20 +27,33 @@ export default function HomeList({
       </div>
 
       {/* 이미지 */}
-      <div className="flex h-20 gap-2">
+      <div
+        className="flex h-20 xl:h-30 gap-2"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
         {/* 썸네일 */}
-        <div className="w-50 h-20 shrink-0 overflow-hidden">
-          <Image
-            src={`/thumbnails/${project.id.toLowerCase()}.png`}
-            alt={project.title}
-            width={300}
-            height={300}
-            className="object-contain"
-          />
-        </div>
-
-        {/* 나머지 */}
-        {/* <ListImages id={project.id} /> */}
+        {hovered ? 
+          <div className="absolute w-20 xl:w-30 h-60 xl:h-90 shrink-0 overflow-hidden -rotate-90 origin-top-left translate-y-20">
+            <Image
+              src={`/thumbnails/${project.id.toLowerCase()}.jpg`}
+              alt={project.title}
+              width={300}
+              height={300}
+              className="object-cover h-full"
+            />
+          </div>
+          :
+          <div className="absolute w-20 xl:w-30 h-60 xl:h-90 shrink-0 overflow-hidden -rotate-90 origin-top-left translate-y-20">
+            <Image
+              src={`/thumbnails/effect-${project.id.toLowerCase()}.png`}
+              alt={project.title}
+              width={300}
+              height={300}
+              className="object-cover h-full"
+            />
+          </div>
+        }
       </div>
 
     </Link>

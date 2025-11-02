@@ -25,7 +25,7 @@ export default function Detail({
           pointer-events-none z-20
           custom-scrollbar
           custom-scrollbar
-          w-[22rem] md:w-[40rem] lg:w-[45rem]
+          w-[22rem] md:w-[40rem] lg:w-[45rem] 2xl:w-[48rem]
         `}
       >
         <Content

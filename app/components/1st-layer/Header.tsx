@@ -1,5 +1,6 @@
 import { throughx } from "@/app/lib/fonts";
 import Menu from "./Menu";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -41,10 +42,7 @@ export default function Header() {
 
         {/* 로고 */}
         <div className="absolute left-[calc(100%+1/6*100%+3rem)] flex gap-4 h-auto w-auto">
-          <div>KMU DESIGN</div>
-          <div>
-            <div className="w-12 h-12 rounded-full border border-neutral-50"></div>
-          </div>
+          <Image src={'/logo.svg'} alt="logo" width={100} height={100} />
         </div>
       </div>
     </header>
