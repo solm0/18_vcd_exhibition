@@ -23,8 +23,12 @@ export function readAssets(id: string) {
   if (fs.existsSync(dir)) {
     images = fs
       .readdirSync(dir)
+      .sort((a, b) => {
+        const numA = parseInt(a.replace(/^work_/, "").split(".")[0]);
+        const numB = parseInt(b.replace(/^work_/, "").split(".")[0]);
+        return numA - numB;
+      })
       .map((file) => `/${id.toLowerCase()}/${file}`)
-      .slice(0, 7)
   }
 
   return images;

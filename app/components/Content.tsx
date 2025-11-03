@@ -86,7 +86,7 @@ export default function Content({
 
       {/* 에셋 - 작품 */}
       {work.length != 0 &&
-        <div className="flex flex-col gap-4 items-start py-8">
+        <div className="flex flex-col gap-4 items-start py-8 w-full">
           <h3 className="text-3xl text-neutral-50">상세</h3>
           <Assets
             assets={work}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Assets({
   assets, setModalOpen,
@@ -9,26 +10,43 @@ export default function Assets({
   return (
     <>
       {assets.map((asset, i) => {
-        const ext = asset.split('.')[1];
+        const ext = asset.split('.')[1].toLowerCase();
         if (!ext) return null;
+
+        const [ratio, setRatio] = useState<number | null>(null);
+        const maxHeight = 800;
+        
+        useEffect(() => {
+          const img = new window.Image();
+          img.src = asset;
+          img.onload = () => {
+            const r = img.height / img.width;
+            setRatio(r);
+          };
+        }, [asset]);
+
+        if (!ratio) return null;
         
         // 이미지
         if (['png','jpg','jpeg','gif','webp','avif'].includes(ext)) {
           return (
             <div
               key={i}
-              className="max-w-200 overflow-hidden hover:cursor-zoom-in"
+              className="relative overflow-hidden flex items-start justify-center hover:cursor-zoom-in w-full max-w-[800px]"
+              style={{
+                maxHeight: maxHeight,
+                aspectRatio: `${1 / ratio}`,
+              }}
               onClick={() => setModalOpen(asset)}
             >
               <Image
                 src={asset}
                 alt={asset}
-                width={1000}
-                height={1000}
-                className="object-left-top"
+                fill
+                className="object-contain object-left-top"
               />
             </div>
-          );
+          )
         }
 
         // 비디오
