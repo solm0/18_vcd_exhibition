@@ -12,7 +12,7 @@ export const HomeData: HomeDataProp[] = [
   {
     id: 'B',
     tag: ['라이브액션', '2D그래픽'],
-    title: '미정',
+    title: 'USER',
   },
   {
     id: 'C',
@@ -22,7 +22,7 @@ export const HomeData: HomeDataProp[] = [
   {
     id: 'D',
     tag: ['2D그래픽', '영상', '사운드', '오브제', '책'],
-    title: '404 Context Not Found',
+    title: '미(未)맥락',
   },
   {
     id: 'E',
@@ -32,17 +32,17 @@ export const HomeData: HomeDataProp[] = [
   {
     id: 'F',
     tag: ['영상', '2D그래픽'],
-    title: '세상에서 제~~~~일로 십자가를 좋아하는 사람!',
+    title: '십자애착군(CRUCIOMANIAC)',
   },
   {
     id: 'G',
     tag: ['타입페이스', '2D그래픽'],
-    title: '오늘의 운세',
+    title: '믿거나말거나 오늘의 운세',
   },
   {
     id: 'H',
     tag: ['사진', '2D그래픽', '포토북', '잡지'],
-    title: '간극조정',
+    title: 'Tuning: 간극조정',
   },
   {
     id: 'I',
@@ -52,7 +52,7 @@ export const HomeData: HomeDataProp[] = [
   {
     id: 'J',
     tag: ['2D그래픽', '인터랙션', '책'],
-    title: '2-way handshake',
+    title: 'ㄴa*',
   },
   {
     id: 'K',
@@ -62,22 +62,22 @@ export const HomeData: HomeDataProp[] = [
   {
     id: 'L',
     tag: ['일러스트레이션', '2D그래픽'],
-    title: '생흔(생존의 흔적)',
+    title: '생흔(生痕)',
   },
   {
     id: 'M',
     tag: ['일러스트레이션', '2D그래픽', '증강현실', '인터랙션'],
-    title: 'Altar of FRAGMENTS',
+    title: 'printf("Hello, Diter!\\n");',
   },
   {
     id: 'N',
     tag: ['타이포그래피', '타입페이스'],
-    title: 'Ai-phabet: Human Dingbat',
+    title: 'AI-PHABET',
   },
   {
     id: 'O',
     tag: ['2D그래픽', '오브제', '프로젝션 맵핑'],
-    title: '공생',
+    title: '공생물',
   },
   {
     id: 'P',
