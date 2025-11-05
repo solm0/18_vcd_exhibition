@@ -15,7 +15,6 @@ export default function Content({
 }) {
   const dp = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'dp');
   const work = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'work');
-
   const metadata = HomeData.find(project => project.id.toLowerCase() === id.toLowerCase());
   
   return (
