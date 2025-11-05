@@ -4,23 +4,34 @@ import Link from "next/link";
 import { detailAxisDeg } from "../lib/pageLayout";
 import { usePathname } from "next/navigation";
 
-function getNextAlphabet(char: string) {
+function getNextAlphabet(char: string, right:boolean) {
   const charCode = char.charCodeAt(0);
-  if (charCode === 112) {
-    return 'a';
-  } else if (charCode >= 97 && charCode < 112) {
-    return String.fromCharCode(charCode + 1);
+  if (right) {
+    if (charCode === 97) {
+      return 'p';
+    } else if (charCode > 97 && charCode <= 112) {
+      return String.fromCharCode(charCode - 1);
+    } else {
+      return char;
+    }
   } else {
-    return char;
+    if (charCode === 112) {
+      return 'a';
+    } else if (charCode >= 97 && charCode < 112) {
+      return String.fromCharCode(charCode + 1);
+    } else {
+      return char;
+    }
   }
 }
 
 export default function Back() {
   const pathname = usePathname().slice(1);
-  const next = getNextAlphabet(pathname);
+  const left = getNextAlphabet(pathname, false);
+  const right = getNextAlphabet(pathname, true);
 
   return (
-    <div className={`${detailAxisDeg} fixed right-8 top-8 z-60 flex flex-col gap-2 items-end`}>
+    <div className={`${detailAxisDeg} fixed right-8 top-8 z-60 flex flex-col gap-4 items-end`}>
       <Link
         href={'/'}
         className={`scale-x-95 tracking-normal origin-left bg-neutral-200 text-neutral-600 px-3 py-1 hover:opacity-50`}
@@ -28,12 +39,20 @@ export default function Back() {
         뒤로
       </Link>
       {pathname.length === 1 &&
-        <Link
-          href={`/${next}`}
-          className={`scale-x-95 tracking-normal origin-left bg-neutral-200 text-neutral-600 px-3 py-1 hover:opacity-50 translate-x-1`}
-        >
-          다음 프로젝트
-        </Link>
+        <div className="flex gap-2">
+          <Link
+            href={`/${left}`}
+            className={`bg-neutral-200 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full shrink-0 scale-x-95 tracking-normal origin-left hover:opacity-50`}
+          >
+            {left.toUpperCase()}
+          </Link>
+          <Link
+            href={`/${right}`}
+            className={`bg-neutral-200 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full shrink-0 scale-x-95 tracking-normal origin-left hover:opacity-50`}
+          >
+            {right.toUpperCase()}
+          </Link>
+        </div>
       }
     </div>
   )
