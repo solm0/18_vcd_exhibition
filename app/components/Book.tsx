@@ -7,6 +7,7 @@ export default function Book({
   pages: string[];
 }) {
   const [page, setPage] = useState(0);
+  if (!pages) return;
 
   return (
     <>

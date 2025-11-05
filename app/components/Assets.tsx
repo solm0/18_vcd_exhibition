@@ -14,7 +14,6 @@ function AssetItem({
   asset: string;
   setModalOpen: (modalOpen: string | null) => void;
 }) {
-  console.log(asset)
   const ext = getExtension(asset);
   const [ratio, setRatio] = useState<number | null>(null);
   const maxHeight = 800;

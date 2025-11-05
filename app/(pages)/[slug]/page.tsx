@@ -1,6 +1,5 @@
 import { DetailData } from "@/app/lib/detail";
 import Detail from "@/app/components/2st-layer-pages/Detail";
-import { readAssets, readAssetsInBook, readFolders } from "@/app/lib/readAssetsCloudinary";
 
 // ✅ 빌드 타임에 모든 슬러그 생성
 export async function generateStaticParams() {
@@ -26,6 +25,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
       팀 정보 없음
     </div>
   );
+  const { readAssets, readFolders, readAssetsInBook } = await import('@/app/lib/server/readAssetsCloudinary');
 
   const detail = matchedKey ? DetailData[matchedKey] : null;
   const assets = await readAssets(matchedKey);

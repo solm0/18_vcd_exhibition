@@ -92,7 +92,7 @@ export default function Content({
       </div>
 
       {/* 에셋 - 책 */}
-      {books.length != 0 &&
+      {books.length !== 0 &&
         <div className="flex flex-col gap-4 items-start w-full py-8">
           {/* <h3 className=" text-neutral-50 w-full">책</h3> */}
           {books.map((pages, i) => (
