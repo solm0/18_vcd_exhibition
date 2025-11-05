@@ -1,6 +1,7 @@
 import { throughx } from "@/app/lib/fonts";
 import Menu from "./Menu";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -41,9 +42,17 @@ export default function Header() {
         </div>
 
         {/* 로고 */}
-        <div className="absolute left-[calc(100%+1/6*100%+3rem)] flex gap-4 h-auto w-auto">
+        {/* <div className="absolute left-[calc(100%+1/6*100%+3rem)] flex gap-4 h-auto w-auto">
           <Image src={'/logo.svg'} alt="logo" width={100} height={100} />
-        </div>
+        </div> */}
+
+        {/* 지도페이지 버튼 */}
+        <Link
+          href={'/map'}
+          className="absolute left-[calc(2/3*100%+1rem)] top-20 flex gap-4 h-auto w-30"
+        >
+          <p className="px-3 py-1 break-keep bg-neutral-200 text-neutral-500 font-bold translate-x-1 hover:opacity-50">전시장 지도</p>
+        </Link>
       </div>
     </header>
   )

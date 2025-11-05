@@ -8,7 +8,7 @@ export default function HomeLists({
   HomeData: HomeDataProp[];
 }) {
   return (
-    <div className="w-auto h-auto text-zinc-900 flex flex-col gap-20 pl-4">
+    <div className="w-auto h-auto text-zinc-900 flex flex-col gap-26 pl-4">
       {/* 기준선 */}
       <div className="absolute left-0 h-[200%] top-0 border-l border-neutral-300"/>
 
