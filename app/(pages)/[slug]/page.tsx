@@ -2,6 +2,17 @@ import { DetailData } from "@/app/lib/detail";
 import Detail from "@/app/components/2st-layer-pages/Detail";
 import { readAssets, readFolders, readAssetsInBook } from "@/app/lib/readAssets";
 
+// ✅ 빌드 타임에 모든 슬러그 생성
+export async function generateStaticParams() {
+  const teamNames = Object.keys(DetailData);
+  return teamNames.map((slug) => ({
+    slug: slug.toLowerCase(),
+  }));
+}
+
+// ✅ SSG 전용으로 설정 (SSR 비활성화)
+export const dynamic = "error";
+
 export default async function DetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const slugLowerCase = slug.toLowerCase();
