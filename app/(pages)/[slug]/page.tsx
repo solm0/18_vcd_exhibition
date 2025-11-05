@@ -1,6 +1,6 @@
 import { DetailData } from "@/app/lib/detail";
 import Detail from "@/app/components/2st-layer-pages/Detail";
-import { readAssets, readFolders, readAssetsInBook } from "@/app/lib/readAssets";
+import { readAssets, readAssetsInBook, readFolders } from "@/app/lib/readAssetsCloudinary";
 
 // ✅ 빌드 타임에 모든 슬러그 생성
 export async function generateStaticParams() {
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 }
 
 // ✅ SSG 전용으로 설정 (SSR 비활성화)
-export const dynamic = "error";
+export const dynamic = "force-static";
 
 export default async function DetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -28,9 +28,11 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
   );
 
   const detail = matchedKey ? DetailData[matchedKey] : null;
-  const assets = readAssets(matchedKey);
-  const bookFolders = readFolders(matchedKey);
-  const books = bookFolders.map((book) => readAssetsInBook(matchedKey, book))
+  const assets = await readAssets(matchedKey);
+  const bookFolders = await readFolders(matchedKey);
+  const books = await Promise.all(
+    bookFolders.map((book) => readAssetsInBook(matchedKey, book))
+  );
 
   if (!detail) {
     return (

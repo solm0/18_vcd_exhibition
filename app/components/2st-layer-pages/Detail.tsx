@@ -15,7 +15,7 @@ export default function Detail({
   id: string;
 }) {
   const [modalOpen, setModalOpen] = useState<string | null>(null);
-
+  
   return (
     <>
       <div
