@@ -27,9 +27,18 @@ export default function About({
           w-[22rem] md:w-[40rem] lg:w-[45rem]
         `}
       >
-        <div className="flex flex-col items-start gap-7 w-auto max-w-[40rem] pointer-events-auto">
+        <div className="flex flex-col items-center gap-7 w-auto max-w-[40rem] pointer-events-auto">
+
+          <div className={`${throughx.className} w-full text-center flex flex-col`}>
+            <h2 className="text-8xl md:text-[10rem] pb-4 md:pb-6 lg:pb-10 duration-300">throughX</h2>
+            <div className="w-full flex flex-col text-4xl md:text-5xl gap-6">
+              <p>2025.11.06-15</p>
+              <p>10:00-19:00</p>
+            </div>
+          </div>
+
           <div
-            className="w-full"
+            className="w-4/5 my-4"
             onClick={() => setModalOpen(AboutData.poster)}
           >
             <Image
@@ -40,15 +49,6 @@ export default function About({
               className="object-cover"
             />
           </div>
-
-          <div className={`${throughx.className} w-full text-center flex flex-col pb-20`}>
-            <h2 className="text-8xl md:text-[10rem] pb-4 md:pb-6 lg:pb-10 duration-300">throughX</h2>
-            <div className="w-full flex justify-between text-4xl md:text-5xl">
-              <p>2025.11.06-15</p>
-              10:00-19:00
-            </div>
-          </div>
-
 
           <div className="w-full flex justify-between text-base md:text-2xl leading-[1.4em] gap-4">
             <div className="flex-1 ">
@@ -63,15 +63,18 @@ export default function About({
             </div>
           </div>
 
-          <div className="flex flex-col gap-7 w-[22rem] md:w-[32rem] scale-x-95 tracking-normal origin-left">
-            {AboutData.description.map((p, i) => (
-              <p key={i} className="break-keep leading-7 text-left">
-                {p}
-              </p>
-            ))}
+          
+          <div className="relative w-full h-[800px]">
+            <div className="absolute top-0 left-0 flex flex-col gap-7 w-[22rem] md:w-[32rem] h-auto scale-x-95 tracking-normal origin-left">
+              {AboutData.description.map((p, i) => (
+                <p key={i} className="break-keep leading-7 text-left">
+                  {p}
+                </p>
+              ))}
+            </div>
           </div>
 
-          {AboutData.subject.map((sub, i) => {
+          {/* {AboutData.subject.map((sub, i) => {
             const foundAssets = assets.filter(asset => asset.split('/')[2].split('_')[0] === sub.id);
             
             return (
@@ -82,7 +85,7 @@ export default function About({
                 <Assets assets={foundAssets} setModalOpen={setModalOpen} />
               </div>
             )
-          })}
+          })} */}
 
         </div>
       </div>

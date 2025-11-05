@@ -30,7 +30,7 @@ export default function Archive({
             기록
           </h2>
 
-          {ArchiveData.subject.map((sub, i) => {
+          {/* {ArchiveData.subject.map((sub, i) => {
             const foundAssets = assets.filter(asset => asset.split('/')[2].split('_')[0] === sub.id);
             console.log(sub.id, foundAssets)
             
@@ -40,7 +40,11 @@ export default function Archive({
                 <Assets assets={foundAssets} setModalOpen={setModalOpen} />
               </div>
             )
-          })}
+          })} */}
+
+          <p className="pt-14">
+            준비 중입니다.
+          </p>
 
         </div>
       </div>
