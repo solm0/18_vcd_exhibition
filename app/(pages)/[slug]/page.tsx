@@ -1,6 +1,7 @@
 import { DetailData } from "@/app/lib/detail";
 import Detail from "@/app/components/2st-layer-pages/Detail";
-import { readAssets, readFolders, readAssetsInBook } from "@/app/lib/readAssets";
+// import { readAssets, readFolders, readAssetsInBook } from "@/app/lib/readAssets";
+import { readAssets, readAssetsInBook, readFolders } from "@/app/lib/readAssetsCloudinary";
 
 export default async function DetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -17,9 +18,15 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
   );
 
   const detail = matchedKey ? DetailData[matchedKey] : null;
-  const assets = readAssets(matchedKey);
-  const bookFolders = readFolders(matchedKey);
-  const books = bookFolders.map((book) => readAssetsInBook(matchedKey, book))
+  // const assets = readAssets(matchedKey);
+  // const bookFolders = readFolders(matchedKey);
+  // const books = bookFolders.map((book) => readAssetsInBook(matchedKey, book))
+
+  const assets = await readAssets(matchedKey);
+  const bookFolders = await readFolders(matchedKey);
+  const books = await Promise.all(
+    bookFolders.map((book) => readAssetsInBook(matchedKey, book))
+  );
 
   if (!detail) {
     return (

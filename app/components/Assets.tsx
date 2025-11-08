@@ -1,13 +1,20 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+function getExtension(url: string): string {
+  const filename = url.split('/').pop(); // 마지막 부분: "work_05.jpg"
+  if (!filename) return 'no filename';
+  const parts = filename.split('.');
+  return parts.length > 1 ? parts.pop()!.toLowerCase() : '';
+}
+
 function AssetItem({
   asset, setModalOpen
 }: {
   asset: string;
   setModalOpen: (modalOpen: string | null) => void;
 }) {
-  const ext = asset.split('.')[1].toLowerCase();
+  const ext = getExtension(asset);
   const [ratio, setRatio] = useState<number | null>(null);
   const maxHeight = 800;
 

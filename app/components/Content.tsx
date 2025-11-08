@@ -13,8 +13,30 @@ export default function Content({
   id: string;
   setModalOpen: (modalOpen: string | null) => void;
 }) {
-  const dp = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'dp');
-  const work = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'work');
+  // const dp = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'dp');
+  // const work = assets.filter(asset => asset.split('/')[2].split('_')[0] === 'work');
+  // const metadata = HomeData.find(project => project.id.toLowerCase() === id.toLowerCase());
+
+  const dp = assets.filter(asset => {
+    // Get path segments after the version number (v1234567)
+    const segments = asset.split('/').slice(7); // index 7 is the folder structure
+    // Only keep files directly inside the team folder (no subfolders)
+    // segments.length === 2 → [folder, filename]
+    if (segments.length !== 2) return false;
+  
+    const filename = segments[1];
+    return filename.split('_')[0] === 'dp';
+  });
+  const work = assets.filter(asset => {
+    // Get path segments after the version number (v1234567)
+    const segments = asset.split('/').slice(7); // index 7 is the folder structure
+    // Only keep files directly inside the team folder (no subfolders)
+    // segments.length === 2 → [folder, filename]
+    if (segments.length !== 2) return false;
+
+    const filename = segments[1];
+    return filename.split('_')[0] === 'work';
+  });
   const metadata = HomeData.find(project => project.id.toLowerCase() === id.toLowerCase());
   
   return (

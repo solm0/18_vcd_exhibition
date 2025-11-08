@@ -44,13 +44,13 @@ export default function Back() {
             href={`/${left}`}
             className={`bg-neutral-200 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full shrink-0 scale-x-95 tracking-normal origin-left hover:opacity-50`}
           >
-            {left.toUpperCase()}
+            {`<`}
           </Link>
           <Link
             href={`/${right}`}
             className={`bg-neutral-200 text-neutral-600 w-7 h-7 flex items-center justify-center rounded-full shrink-0 scale-x-95 tracking-normal origin-left hover:opacity-50`}
           >
-            {right.toUpperCase()}
+            {`>`}
           </Link>
         </div>
       }
