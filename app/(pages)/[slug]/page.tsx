@@ -3,6 +3,21 @@ import Detail from "@/app/components/2st-layer-pages/Detail";
 // import { readAssets, readFolders, readAssetsInBook } from "@/app/lib/readAssets";
 import { readAssets, readAssetsInBook, readFolders } from "@/app/lib/readAssetsCloudinary";
 
+interface DetailPageProps {
+  params: Promise<{ slug: string }>;
+  assets: string[];
+  books: string[][];
+  bookFolders: string[];
+  detail: any;
+}
+
+export async function generateStaticParams() {
+  // 모든 slug를 빌드 시점에 가져와 static 페이지 생성
+  return Object.keys(DetailData).map((key) => ({
+    slug: key.toLowerCase(),
+  }));
+}
+
 export default async function DetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const slugLowerCase = slug.toLowerCase();
