@@ -31,12 +31,12 @@ export default function Back() {
   const right = getNextAlphabet(pathname, true);
 
   return (
-    <div className={`${detailAxisDeg} fixed right-8 top-8 z-60 flex flex-col gap-4 items-end`}>
+    <div className={`${detailAxisDeg} fixed right-8 top-8 2xl:right-30 2xl:top-20 scale-100 2xl:scale-130 z-60 flex flex-col gap-4 items-end`}>
       <Link
         href={'/'}
         className={`scale-x-95 tracking-normal origin-left bg-neutral-200 text-neutral-600 px-3 py-1 hover:opacity-50`}
       >
-        뒤로
+        목록으로
       </Link>
       {pathname.length === 1 &&
         <div className="flex gap-2">

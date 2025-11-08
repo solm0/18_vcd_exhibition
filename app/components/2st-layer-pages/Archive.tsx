@@ -12,7 +12,7 @@ export default function Archive() {
       <div
         className={`
           ${detailAxisDeg} ${detailTop} ${detailTransX}
-          absolute pt-80 pb-40  h-[120%] overflow-y-scroll overflow-x-hidden
+          absolute pt-80 pb-60 2xl:pb-90 h-[120%] overflow-y-scroll overflow-x-hidden
           pointer-events-none z-20
           text-neutral-50
           custom-scrollbar

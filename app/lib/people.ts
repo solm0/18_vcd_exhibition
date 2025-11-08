@@ -9,4 +9,5 @@ export const PeopleData: PeopleDataProp[] = [
   {role:'DP', names:['김유록', '현병수', '이재희', '최창현']},
   {role:'행정/홍보', names:['이지은', '원준희']},
   {role:'아카이빙', names:['정솔미', '김민제']},
+  {role:'+사진팀', names:['고수빈', '이수빈', '김경민', '김민제', '김은우', '김봄']},
 ]
