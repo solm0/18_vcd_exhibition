@@ -15,7 +15,7 @@ export default function Guestbook() {
   const [isComposing, setIsComposing] = useState(false);
   const [messages, setMessages] = useState<{ timestamp: string; message: string }[]>([]);
   const [reloadFlag, setReloadFlag] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -55,7 +55,7 @@ export default function Guestbook() {
   }, [reloadFlag]);
 
   return (
-    <div className={`rotate-[30deg] md:rotate-0 origin-top-left fixed p-2 md:p-0 w-[calc(100vw-1rem)] md:w-80 ${isOpen ? 'border-b': 'border-0'} border-neutral-200 bg-neutral-500 h-auto -top-78 md:-top-40 -left-22 md:-left-40 pointer-events-auto transition-all`}>
+    <div className={`rotate-[30deg] md:rotate-0 origin-top-left fixed p-2 md:p-0 w-[calc(100vw-1rem)] md:w-80 xl:w-120 ${isOpen ? 'border-b': 'border-0'} border-neutral-200 bg-neutral-500 h-auto -top-78 md:-top-40 xl:-top-20 -left-22 md:-left-40 pointer-events-auto transition-all`}>
       <div className="w-full h-auto flex flex-col gap-4 items-start">
 
         {/* 열기/닫기 버튼 */}
@@ -70,7 +70,7 @@ export default function Guestbook() {
 
         <div className={`${isOpen ? 'flex' : 'hidden'} h-auto w-full flex-col gap-4`}>
           {/* 목록 */}
-          <div className='w-full h-50 overflow-y-scroll overflow-x-hidden custom-scrollbar'>
+          <div className='w-full h-50 xl:h-70 overflow-y-scroll overflow-x-hidden custom-scrollbar'>
             {messages.map((msg, idx) => (
               <div key={idx} className="relative flex gap-2 w-full min-w-0">
                 <p className='w-28 shrink-0 scale-x-95 tracking-normal origin-left opacity-70'>{msg.timestamp}</p>
