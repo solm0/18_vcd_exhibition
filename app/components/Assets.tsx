@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { isDev } from "../lib/env";
 
 function getExtension(url: string): string {
   const filename = url.split('/').pop(); // 마지막 부분: "work_05.jpg"
@@ -14,7 +15,9 @@ function AssetItem({
   asset: string;
   setModalOpen: (modalOpen: string | null) => void;
 }) {
-  const ext = getExtension(asset);
+  const ext = isDev
+    ? asset.split('.')[1].toLowerCase()
+    : getExtension(asset);
   const [ratio, setRatio] = useState<number | null>(null);
   const maxHeight = 800;
 
@@ -50,7 +53,11 @@ function AssetItem({
 
   if (['mp4', 'webm', 'mov', 'm4v'].includes(ext)) {
     return (
-      <video controls className="w-full max-w-[800px] rounded-lg">
+      <video
+        controls
+        className="w-full max-w-[800px] rounded-lg"
+        controlsList="nofullscreen"
+      >
         <source src={asset} type={`video/${ext}`} />
         Your browser does not support the video tag.
       </video>
