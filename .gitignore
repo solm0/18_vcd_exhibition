@@ -40,4 +40,19 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/public/*
+/public/a
+/public/b
+/public/c
+/public/d
+/public/e
+/public/f
+/public/g
+/public/h
+/public/i
+/public/j
+/public/k
+/public/l
+/public/m
+/public/n
+/public/o
+/public/p
