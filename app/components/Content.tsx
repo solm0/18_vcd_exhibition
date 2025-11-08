@@ -4,6 +4,7 @@ import Link from "next/link";
 import Assets from "./Assets";
 import Book from "./Book";
 import { isDev } from "../lib/env";
+import { useState } from "react";
 
 export default function Content({
   project, assets, books, id, setModalOpen
@@ -33,6 +34,8 @@ export default function Content({
       return filename.split('_')[0] === 'work';
     });
   const metadata = HomeData.find(project => project.id.toLowerCase() === id.toLowerCase());
+
+  const [alertOpen, setAlertOpen] = useState(false);
   
   return (
     <div className="flex flex-col items-start gap-7 w-full pointer-events-auto">
@@ -69,9 +72,27 @@ export default function Content({
       {project.websites &&
         <div className="flex flex-col gap-2 text-neutral-50 w-full animate-bounce items-start">
           {project.websites.map((website, i) => (
-            <Link key={i} href={website.link} target="_blank" className="underline underline-offset-4 decoration-1 hover:opacity-50 flex items-center scale-x-95 tracking-normal origin-left">
-              {website.title}
-            </Link>
+            <div
+              className="flex gap-2 items-start"
+              onClick={() => {
+                setAlertOpen(true);
+                setTimeout(() => {
+                  setAlertOpen(false);
+                }, 3000);
+              }}
+            >
+              <Link
+                key={i}
+                href={website.link}
+                target="_blank"
+                className="pointer-events-none underline underline-offset-4 decoration-1 hover:opacity-50 flex items-center scale-x-95 tracking-normal origin-left"
+              >
+                {website.title}
+              </Link>
+              {alertOpen &&
+                <p className="text-sm w-45 break-keep bg-neutral-200 p-2 text-neutral-900">전시 기간 동안은 링크 클릭이 불가합니다. 전시장에 와서 봐주세요~!</p>
+              }
+            </div>
           ))}
         </div>
       }
