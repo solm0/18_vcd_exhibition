@@ -2,15 +2,9 @@
 
 import { useState } from "react";
 import ImageModal from "../ImageModal";
-import Assets from "../Assets";
-import { ArchiveData } from "../../lib/archive";
 import { detailAxisDeg, detailTop, detailTransX } from "../../lib/pageLayout";
 
-export default function Archive({
-  assets
-}:{
-  assets: string[];
-}) {
+export default function Archive() {
   const [modalOpen, setModalOpen] = useState<string | null>(null);
 
   return (

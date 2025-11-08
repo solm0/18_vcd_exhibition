@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 const assets = readAssets('about');
 
 export default function AboutPage() {
-  return <About assets={assets} />
+  return <About />
 }

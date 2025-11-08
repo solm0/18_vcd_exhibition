@@ -73,6 +73,7 @@ export default function Content({
         <div className="flex flex-col gap-2 text-neutral-50 w-full animate-bounce items-start">
           {project.websites.map((website, i) => (
             <div
+              key={i}
               className="flex gap-2 items-start"
               onClick={() => {
                 setAlertOpen(true);
@@ -82,7 +83,6 @@ export default function Content({
               }}
             >
               <Link
-                key={i}
                 href={website.link}
                 target="_blank"
                 className="pointer-events-none underline underline-offset-4 decoration-1 hover:opacity-50 flex items-center scale-x-95 tracking-normal origin-left"

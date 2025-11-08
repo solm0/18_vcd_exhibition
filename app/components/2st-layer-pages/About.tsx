@@ -4,15 +4,10 @@ import { useState } from "react";
 import ImageModal from "../ImageModal";
 import Image from "next/image";
 import { AboutData } from "../../lib/about";
-import Assets from "../Assets";
 import { detailAxisDeg, detailTop, detailTransX } from "../../lib/pageLayout";
 import { throughx } from "@/app/lib/fonts";
 
-export default function About({
-  assets
-}:{
-  assets: string[];
-}) {
+export default function About() {
   const [modalOpen, setModalOpen] = useState<string | null>(null);
 
   return (

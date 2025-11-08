@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function ImageModal({
   asset, setModalOpen
@@ -20,6 +20,29 @@ export default function ImageModal({
       return next;
     });
   }, []);
+
+  useEffect(() => {
+    if (!asset) return;
+
+    let timeout: NodeJS.Timeout;
+
+    const resetTimer = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setModalOpen(null);
+      }, 3 * 60 * 1000); // 3분
+    };
+
+    const events = ["mousemove", "mousedown", "wheel", "keydown", "touchstart"];
+    events.forEach((event) => window.addEventListener(event, resetTimer));
+
+    resetTimer(); // 초기 타이머 시작
+
+    return () => {
+      clearTimeout(timeout);
+      events.forEach((event) => window.removeEventListener(event, resetTimer));
+    };
+  }, [asset, setModalOpen]);
 
   return (
     <>

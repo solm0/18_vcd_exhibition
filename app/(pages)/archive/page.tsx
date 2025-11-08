@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 const assets = readAssets('archive');
 
 export default function ArchivePage() {
-  return <Archive assets={assets} />
+  return <Archive />
 }
