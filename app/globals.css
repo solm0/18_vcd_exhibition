@@ -31,3 +31,13 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   @apply bg-neutral-50;
 }
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    background-color: YOUR_COLOR !important;
+  }
+}
