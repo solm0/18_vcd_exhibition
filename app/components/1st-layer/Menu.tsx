@@ -13,11 +13,6 @@ export default function Menu() {
           참여한 사람
         </p>
       </Link>
-      <Link href={'/archive'}>
-        <p className="underline underline-offset-4 decoration-1 hover:opacity-50 scale-x-95 tracking-normal origin-left">
-          기록
-        </p>
-      </Link>
     </div>
   )
 }
